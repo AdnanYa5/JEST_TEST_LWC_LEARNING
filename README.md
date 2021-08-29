@@ -15,3 +15,13 @@ npm install @salesforce/sfdx-lwc-jest --save-dev
 
 4. Run You Jest Test Cases
 Command - npm run test:unit or node ./node_modules/@salesforce/lwc-jest/bin/sfdx-lwc-jest
+
+--------------------------
+Nested Component testing - Conditions:
+Parent - 
+* Check whether the child component is rendering properly or not
+* Check whether the user details is having correct data or not in child component
+
+Child -
+* Check when user details is available
+* Check when user details is not available
