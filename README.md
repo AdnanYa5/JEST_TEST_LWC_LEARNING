@@ -25,3 +25,26 @@ Parent -
 Child -
 * Check when user details is available
 * Check when user details is not available
+
+
+-----------------------------
+Apex Imperative Method Testing - Steps for Mocking
+1. Import method and mock reference
+import getAccountList from '@salesforce/apex/AccountController.getAccountList';
+const APEX_ACCOUNTLIST_ERROR = require('./data/accountsError.json');
+const APEX_ACCOUNTLIST_SUCCESS = require('./data/accountsList.json');
+
+2. In Imperative method we need to mock explicitly
+//jest.mock(moduleName, factory, options)
+jest.mock('@salesforce/apex/MyAccountController.getAccountList',
+()=>({
+    default:jest.fn()
+}),
+{virtual:true}
+)
+
+3. mock implementation with success
+getAccountList.mockResolvedValue(APEX_ACCOUNTLIST_SUCCESS);
+
+4. mock implementation with failure
+getAccountList.mockRejectedValue(APEX_ACCOUNTLIST_ERROR);
