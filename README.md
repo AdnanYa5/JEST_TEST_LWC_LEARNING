@@ -1,5 +1,15 @@
 ReadMe
 
+----------------
+Write Jest tests to:
+1. Test a component in isolation
+2. Test a component's public api (@api properties and methods, events)
+3. Test basic user interaction (clicks)
+4. Verify DOM output of a component
+5. Verify that events fire when expected
+
+-----------
+
 Prerequisites for beginning with JEST testing:
 
 1. Check node and npm is installed
